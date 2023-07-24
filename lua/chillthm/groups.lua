@@ -3,15 +3,15 @@ return {
   load = function(c)
     local groups = {
           ["Italic"] = { fg = c.none, bg = c.none },
-          ["WhiteSpace"] = { fg = c.gray, bg = c.none },
+          ["WhiteSpace"] = { fg = c.gray_50, bg = c.none, bold = true },
           ["Constant"] = { fg = c.violet, bg = c.none },                  -- any constant
           ["String"] = { fg = c.pink, bg = c.none },                      -- this is a string
           ["Character"] = { fg = c.yellow, bg = c.none },                 -- a character constant: 'c', '\n'
           ["Boolean"] = { fg = c.cyan, bg = c.none },                     -- a boolean constant: TRUE, false
           ["Number"] = { fg = c.yellow, bg = c.none },                    -- a boolean constant: TRUE, false
-          ["Float"] = { fg = c.violet, bg = c.none },                     -- a floating point constant: 2.3e10
-          ["Identifier"] = { fg = c.gray_120, bg = c.none },              -- any variable name
-          ["Function"] = { fg = c.yellow, bg = c.none },                  -- function name (also: methods for classes)
+          ["Float"] = { fg = c.green_50, bg = c.none },                     -- a floating point constant: 2.3e10
+          ["Identifier"] = { fg = c.blue_light, bg = c.none },              -- any variable name
+          ["Function"] = { fg = c.gray_100, bg = c.none },                  -- function name (also: methods for classes)
           ["Statement"] = { fg = c.Statement, bg = c.none },              -- any statement
           ["Conditional"] = { fg = c.Conditional, bg = c.none },          -- if, then, else, endif, switch, etc.
           ["Repeat"] = { fg = c.cyan, bg = c.none },                      -- for, do, while, etc.
@@ -38,7 +38,7 @@ return {
           ["Ignore"] = { fg = c.disabled, bg = c.none },                  -- left blank, hidden
           ["Error"] = { fg = c.error, bg = c.none },                      -- any erroneous construct, also -- see: https://github.com/neovim/neovim/issues/13746
           ["Todo"] = { fg = c.violet, bg = c.none, bold = true, italic = true }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-          ["Comment"] = { fg = c.gray_90, bg = c.none },                  -- any comment
+          ["Comment"] = { fg = c.blue2, bg = c.none, bold = true, italic = true },                  -- any comment
       -- Barbar highlighting
           ["BufferInactive"] = { fg = c.gray1, bg = c.linebg },
           ["BufferInactiveIndex"] = { fg = c.Special, bg = c.linebg },
@@ -51,7 +51,7 @@ return {
           ["BufferVisibleMod"] = { fg = c.fg, bg = c.bg },
           ["BufferVisibleSign"] = { fg = c.fg, bg = c.bg },
           ["BufferVisibleTarget"] = { fg = c.red, bg = c.bg },
-          ["ColorColumn"] = { fg = c.none, bg = c.gray_20 },                            --  used for the columns set with 'colorcolumn'
+          ["ColorColumn"] = { fg = c.none, bg = c.gray_15 },                            --  used for the columns set with 'colorcolumn'
           ["Conceal"] = { fg = c.blue, bg = c.none },                                   -- placeholder characters substituted for concealed text (see 'conceallevel')
           ["Cursor"] = { reverse = true },                                              -- the character under the cursor
           ["CursorIM"] = { reverse = true },                                            -- like Cursor, but used when in IME mode
@@ -73,7 +73,7 @@ return {
           ["ModeMsg"] = { fg = c.green, bg = c.none },                                  -- 'showmode' message (e.g., '-- INSERT --')
           ["MoreMsg"] = { link = "ModeMsg" },                                           -- more-prompt
           ["NonText"] = { fg = c.fg1, bg = c.none },                                    -- '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., '>' displayed when a double-wide character doesn't fit at the end of the line).
-          ["Normal"] = { fg = c.gray_120, bg = c.gray_10 },                             -- normal text
+          ["Normal"] = { fg = c.fg, bg = c.bg },                             -- normal text
           ["NormalFloat"] = { fg = c.gray_120, bg = c.gray_10 },                        -- normal text
       -- Popup Menu colors(e.g. nvim-cmp)
           ["Menu"] = { fg = c.fg1, bg = c.bg1 },                                        -- Popup menu: normal item.
@@ -103,7 +103,7 @@ return {
           ["WarningMsg"] = { fg = c.red, bg = c.none },          --  warning messages
           ["WildMenu"] = { fg = c.red, bg = c.selection, bold = true }, --  current match in 'wildmenu' completion
           ["CursorColumn"] = { fg = c.none, bg = c.none },       -- Current cursor column highlight
-          ["CursorLine"] = { fg = c.none, bg = c.gray_20 },      -- Current cursor line highlight
+          ["CursorLine"] = { fg = c.none, bg = c.gray_15 },      -- Current cursor line highlight
           ["ToolbarLine"] = { fg = c.fg1, bg = c.disabled },
           ["ToolbarButton"] = { fg = c.fg1, bg = c.bg, bold = true },
           ["NormalMode"] = { fg = c.accent, bg = c.none, reverse = true },
@@ -192,16 +192,16 @@ return {
           ["@constant.character.escape"] = { fg = c.cyan, bg = c.none },
           ["@constant.numeric"] = { fg = c.yellow, bg = c.none },
           ["@punctuation.bracket"] = { fg = c.gray_120 },
-          ["@string"] = { fg = c.pink, bg = c.none },
-          ["@string.regexp"] = { fg = c.cyan, bg = c.none },
+          ["@string"] = { fg = c.blue, bg = c.none },
+          ["@string.regexp"] = { fg = c.blue, bg = c.none },
           ["@string.special"] = { fg = c.yellow, underline = true },
-          ["@comment"] = { fg = c.gray_90, bg = c.none },
+          ["@comment"] = { fg = c.blue2, bg = c.none },
           ["@variable"] = { fg = c.gray_120, bg = c.none },
           ["@variable.builtin"] = { fg = c.coral },
           ["@variable.other.member"] = { fg = c.violet },
           ["@label"] = { fg = c.yellow },
-          ["@keyword"] = { fg = c.cyan },
-          ["@function"] = { fg = c.yellow },
+          ["@keyword"] = { fg = c.red },
+          ["@function"] = { fg = c.green },
           ["@function.declaration"] = { fg = c.gray_130 },
           ["@function.macro"] = { fg = c.lime },
           ["@function.builtin"] = { fg = c.lime },
@@ -211,7 +211,7 @@ return {
           ["@namespace"] = { fg = c.blue },
           ["@field"] = { fg = c.violet },
           ["@brack"] = { fg = c.gray_120 },
-          ["@lsp.type.property"] = { fg = c.violet },
+          ["@lsp.type.property"] = { fg = c.orange },
           ["@lsp.type.typeParameter"] = { link = "Type" },
           ["@lsp.type.decorator"] = {},
     }

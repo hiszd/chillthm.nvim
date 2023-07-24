@@ -1,2 +1,2 @@
-require("fleet")
-require("fleet").setup()
+require("chillthm")
+require("chillthm").setup()

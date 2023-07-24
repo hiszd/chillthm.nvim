@@ -6,7 +6,7 @@ local CN = {}
 CN.padding = " "
 
 ---@type string
-local PREFIX = "Fleet"
+local PREFIX = "ChillThm"
 CN.PREFIX = PREFIX
 
 return CN

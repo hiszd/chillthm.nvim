@@ -8,20 +8,25 @@ local gcurmod = function()
 end
 
 local M = {}
-M.get_color = require("fleet.color").gcol
+M.get_color = require("chillthm.color").gcol
 M.get_current_mode = gcurmod
 
-M.__z = require("fleet.color").colors(gcurmod())
-M.__g = require("fleet.groups").load(M.__z)
+M.reload = function()
+  require("plenary.reload").reload_module('chillthm')
+  vim.api.nvim_command("colorscheme chillthm")
+end
+
+M.__z = require("chillthm.color").colors(gcurmod())
+M.__g = require("chillthm.groups").load(M.__z)
 
 ---Configure theme and install theme into instance
 M.setup = function()
   print("setting up")
-  vim.g.colors_name = "fleet"
+  vim.g.colors_name = "chillthm"
   vim.cmd("hi clear")
   vim.cmd("syntax reset")
   ---@type table
-  M.__g = require("fleet.groups").load(M.__z)
+  M.__g = require("chillthm.groups").load(M.__z)
 
   for k, v in pairs(M.__g) do
     -- if string.find(k, "@") then
