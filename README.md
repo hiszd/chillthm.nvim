@@ -1,29 +1,25 @@
-# clrtheme.nvim
+# chillthm.nvim
 
-Clear dark and light theme for Neovim using [tjdevries/colorbuddy.vim](https://github.com/tjdevries/colorbuddy.vim)
-
-Based on [snazzybuddy by bbenzikry](https://github.com/bbenzikry/snazzybuddy)
+![image](https://github.com/hiszd/chillthm.nvim/assets/9100034/cda63b36-5ea4-436f-8bd4-2afa6e72f1f4)
 
 ## Installation
 
 ```vim
 " With Vim-Plug
-Plug 'tjdevries/colorbuddy.nvim'
-Plug 'hiszd/clrtheme.nvim'
+Plug 'hiszd/chillthm.nvim'
 
 " Enable the color scheme
-colorscheme clrtheme
+colorscheme chillthm
 ```
 
 ```lua
 -- With packer
-use 'tjdevries/colorbuddy.nvim'
-use 'hiszd/clrtheme.nvim'
+use 'hiszd/chillthm.nvim'
 ```
 
 ```lua
 --  in your lua config
-require('clrtheme')
+require('chillthm')
 ```
 
 ## Switching between theme versions
@@ -35,7 +31,7 @@ function ThemeToggle()
     else
         vim.g.background = 'dark'
     end
-    require('clrtheme').reload()
+    require('chillthm').reload()
 end
 
 --- ... map this function to any keybinding
