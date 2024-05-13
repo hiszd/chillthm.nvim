@@ -21,7 +21,6 @@ M.__g = require("chillthm.groups").load(M.__z)
 
 ---Configure theme and install theme into instance
 M.setup = function()
-  print("setting up")
   vim.g.colors_name = "chillthm"
   vim.cmd("hi clear")
   vim.cmd("syntax reset")
