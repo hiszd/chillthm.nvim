@@ -137,6 +137,11 @@ return {
       -- TODO Treesitter Defs
       ["@text.literal"] = { fg = c.blue2 },
       ["@comment"] = { fg = c.comment, bg = c.none, bold = true, italic = true },
+      ["@comment.todo"] = { fg = c.commentTodo, bg = c.none, bold = true, italic = true },
+      ["@comment.error"] = { fg = c.commentError, bg = c.none, bold = true, italic = true },
+      ["@comment.warn"] = { fg = c.commentWarn, bg = c.none, bold = true, italic = true },
+      ["@comment.info"] = { fg = c.commentInfo, bg = c.none, bold = true, italic = true },
+      ["@comment.hint"] = { fg = c.commentHint, bg = c.none, bold = true, italic = true },
       ["Comment"] = { fg = c.comment, bg = c.none, bold = true, italic = true }, -- any comment
 
       ["@text.reference"] = { fg = c.violet },
@@ -160,7 +165,7 @@ return {
 
       ["@text.todo"] = { link = "Todo" },                                              -- TODO, WIP
       ["Todo"] = { fg = c.blue, bg = c.none },
-      ["@text.note"] = { fg = c.violet, bg = c.none },                                   -- NOTE, INFO, DOCS, PERF, TEST
+      ["@text.note"] = { fg = c.violet, bg = c.none },                                 -- NOTE, INFO, DOCS, PERF, TEST
       ["@text.warning"] = { fg = c.bg, bg = "#ffaf00" },                               -- WARN, FIX, HACK
       ["@text.danger"] = { fg = c.bg, bg = c.red },                                    -- BUG, FIXME, ERROR
 
