@@ -131,6 +131,7 @@ return {
       ["LspReferenceText"] = { fg = c.none, bg = c.lsp_background },       -- used for highlighting 'text' references
       ["LspReferenceRead"] = { fg = c.none, bg = c.lsp_background },       -- used for highlighting 'read' references
       ["LspReferenceWrite"] = { fg = c.none, bg = c.lsp_background },      -- used for highlighting 'write' references
+      ["LspInlayHint"] = { fg = c.comment, bg = c.none },
 
 
 
